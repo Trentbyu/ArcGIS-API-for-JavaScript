@@ -1,3 +1,6 @@
+
+
+
 require([
     "esri/config",
     "esri/Map",
@@ -22,16 +25,49 @@ require([
 
     
     // Wind mills by england 
-    const layer1 = new FeatureLayer({
-        url: "https://services3.arcgis.com/nGV4jiurzcahJ9LV/ArcGIS/rest/services/Offshore_Wind_Crown_Estate_Scotland/FeatureServer/0"
-    });
+    document.getElementById('Energy').onclick = function () {
+        const layer1 = new FeatureLayer({
+            url: "https://services3.arcgis.com/nGV4jiurzcahJ9LV/ArcGIS/rest/services/Offshore_Wind_Crown_Estate_Scotland/FeatureServer/0"
+        });
+        map.removeAll();
 
-    map.add(layer1, 1);
+        map.add(layer1, 1);
+        document.getElementById("right").innerText = "windmills are right out side of new england"
 
-    const layer2 = new FeatureLayer({
-        url: "https://landscape10.arcgis.com/arcgis/rest/services/USA_Federal_Lands/ImageServer"
-    });
+            
+    }
 
-    map.add(layer2, 2);
+    document.getElementById('Nuclear').onclick = function () {
+        const layer1 = new FeatureLayer({
+            url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/ArcGIS/rest/services/NRC_Regions_1/FeatureServer/0"
+        });
+        document.getElementById("right").innerText = "These are the different nuclear regions in america"
+        map.removeAll();
+
+        map.add(layer1, 2);
+    }
+    document.getElementById('Power').onclick = function () {
+        const layer1 = new FeatureLayer({
+            url: " https://services2.arcgis.com/FiaPA4ga0iQKduv3/ArcGIS/rest/services/eGRID_Subregions_1/FeatureServer/1"
+        });
+        document.getElementById("right").innerText = "eGRID subregions ensure that power system demand and supply are finely balanced"
+        map.removeAll();
+
+        map.add(layer1, 3);
+    }
+
+   
+
+
+    document.getElementById('RemoveALL').onclick = function () {
+       
+        map.removeAll();
+
+
+    }
 
 });
+
+
+
+
