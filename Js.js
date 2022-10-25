@@ -26,6 +26,8 @@ require([
         "title": "Trailhead",
         "content": "<b>Trail:</b> {TRL_NAME}<br><b>City:</b> {CITY_JUR}<br><b>Cross Street:</b> {X_STREET}<br><b>Parking:</b> {PARKING}<br><b>Elevation:</b> {ELEV_FT} ft"
       }
+
+      
     const trailheads = new FeatureLayer({
     url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_Styled/FeatureServer/0",
     outFields: ["TRL_NAME","CITY_JUR","X_STREET","PARKING","ELEV_FT"],
@@ -88,6 +90,24 @@ require([
 
 
     }
+
+
+    document.getElementById('GOV').onclick = function () {
+        const layer1 = new FeatureLayer({
+            url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Active_Article_III_Federal_Judge/FeatureServer"
+        });
+        const layer2 = new FeatureLayer({
+            url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/US_District_Court_Jurisdictions_gdb_1/FeatureServer"
+        });
+        document.getElementById("right").innerText = "Description:  There are 94 district or trial courts in the U.S. There is at least one district court in each state, and the District of Columbia.  This layer is sourced from Homeland Infrastructure Foundation-Level Data (HIFLD)."
+        map.removeAll();
+
+        map.add(layer1, 3);
+        map.add(layer2, 2);
+
+    }
+    
+
 
 });
 
