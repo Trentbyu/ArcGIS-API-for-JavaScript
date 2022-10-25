@@ -2,24 +2,63 @@
 html,
 body,
 #viewDiv {
-    padding-left: 6%;
-    padding-top: 2%;
-    padding-right: 2%;
-    margin: 0;
-    height: 700px;
-    width: 1300px;
+   background-color: lightblue;
+   padding-left: 6%;
+   padding-top: 2%;
+   padding-right: 2%;
+   margin: 0;
+   height: 700px;
+   width: 1300px;
   ;
     
 }
 .header {
+   margin-top: -3%;
    margin-left: 6%;
 }
 .buttons {
-    
-    padding-left: 6%;
+   
+   padding-left: 6%;
+
 
 }
-
+button {
+   text-align: center;
+   font-size: large;
+}
 #right {
    margin-left: 6%;
 }
+
+
+@media only screen and (max-width: 600px) {
+   html,
+   body,
+   #viewDiv {
+      background-color: lightblue;
+      padding-left: 5%;
+      padding-top: 2%;
+      padding-right: 2%;
+      margin: 0;
+      height: 500px;
+      width: 300px;
+   ;
+      
+   }
+   .header {
+      margin-left: 5%;
+   }
+   .buttons {
+      
+      padding-left: 5%;
+
+
+   }
+   button {
+      text-align: center;
+      font-size: medium;
+   }
+   #right {
+      margin-left: 5%;
+   }
+ }
