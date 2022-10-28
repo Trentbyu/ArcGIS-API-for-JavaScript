@@ -22,19 +22,24 @@ require([
         center: [-118.80543,34.02700],
         zoom: 5
     });
-    const popupTrailheads = {
-        "title": "Trailhead",
-        "content": "<b>Trail:</b> {TRL_NAME}<br><b>City:</b> {CITY_JUR}<br><b>Cross Street:</b> {X_STREET}<br><b>Parking:</b> {PARKING}<br><b>Elevation:</b> {ELEV_FT} ft"
-      }
-
-      
-    const trailheads = new FeatureLayer({
-    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads_Styled/FeatureServer/0",
-    outFields: ["TRL_NAME","CITY_JUR","X_STREET","PARKING","ELEV_FT"],
-    popupTemplate: popupTrailheads
-    });
-    map.add(trailheads);
     
+    
+    const popupGov = {
+    "title": "GOV",
+    "content": "<b>Court Type:</b> {Court_Type}<br><br>Court Name: <br> {Court_Name}<br> <br>Address :<br> {Address}<br><br> State:<br>{State}<br><br>City: <br>{City}<br>"
+    }
+
+
+    const NGOV = new FeatureLayer({
+        url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Active_Article_III_Federal_Judge/FeatureServer",
+        outFields: ["Court_Type", "Court_Name", "Address","State","City"],
+        popupTemplate: popupGov
+        });
+    
+    
+
+
+
 
     document.getElementById('Nuclear').onclick = function () {
         const layer1 = new FeatureLayer({
@@ -65,8 +70,14 @@ require([
         map.add(layer1, 3);
     }
     document.getElementById('EPA').onclick = function () {
+        const EPAPOP = {
+            "title": "EPA",
+            "content": "<b>Name:</b> {PRIMARY_NAME}<br><br>Address: <br> {LOCATION_ADDRESS }<br> <br>HUC8_CODE :<br> {HUC8_CODE}<br><br>City: <br>{CITY_NAME}<br>"
+            }
         const layer1 = new FeatureLayer({
-            url: "https://services.arcgis.com/cJ9YHowT8TU7DUyn/ArcGIS/rest/services/FRS_INTERESTS_AIR_MAJOR/FeatureServer/0"
+            url: "https://services.arcgis.com/cJ9YHowT8TU7DUyn/ArcGIS/rest/services/FRS_INTERESTS_AIR_MAJOR/FeatureServer/0",
+            outFields: ["CourtPRIMARY_NAME_Type", "LOCATION_ADDRESS ", "HUC8_CODE","CiCITY_NAME"],
+            popupTemplate: EPAPOP
         });
         document.getElementById("right").innerText = "Description: The Facility Registry Service (FRS) provides quality facility data to support EPA's mission of protecting human health and the environment by identifying and geospatially locating facilities, sites, or places subject to environmental regulations of environmental interest."
         map.removeAll();
@@ -93,21 +104,20 @@ require([
 
 
     document.getElementById('GOV').onclick = function () {
-        const layer1 = new FeatureLayer({
-            url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Active_Article_III_Federal_Judge/FeatureServer"
-        });
-        const layer2 = new FeatureLayer({
-            url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/US_District_Court_Jurisdictions_gdb_1/FeatureServer"
-        });
+        // const layer1 = new FeatureLayer({
+        //     url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Active_Article_III_Federal_Judge/FeatureServer"
+        // });
+        
         document.getElementById("right").innerText = "Description:  There are 94 district or trial courts in the U.S. There is at least one district court in each state, and the District of Columbia.  This layer is sourced from Homeland Infrastructure Foundation-Level Data (HIFLD)."
         map.removeAll();
 
-        map.add(layer1, 3);
-        map.add(layer2, 2);
+
+        map.add(NGOV, 1);
+        
 
     }
     
-
+   
 
 });
 
