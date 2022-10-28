@@ -1,7 +1,6 @@
 # Overview
 
-{Provide a description the map software that you wrote. Describe how to use your software.  Describe the source of the data that you used.}
-This software is to show different data on a map. With this software you are able to see updated power lines, power plants, and goverment land. This data is updated every so often. 
+This software is to show different data on a map. With this software you are able to see updated power lines, power plants, and goverment land. This data is updated every so often from the data bases that were used in the softawre. 
 <br>
 <br>
 This software was written so i could better understand how to use GIS Mapping. 
