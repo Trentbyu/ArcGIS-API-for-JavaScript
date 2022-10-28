@@ -18,7 +18,7 @@ This software was written in java script.
 
 {Make a list of websites that you found helpful in this project}
 * [js.arc](https://developers.arcgis.com/javascript/latest/)
-* [Web Site Name](http://url.link.goes.here)
+* [JavaScript.arc]([http://url.link.goes.here](https://www.javascripttutorial.net/web-apis/javascript-arc/))
 
 # Future Work
 
