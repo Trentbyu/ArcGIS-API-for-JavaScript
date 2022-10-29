@@ -16,13 +16,11 @@ This software was devolpoed using vs code.
 This software was written in java script, Html, and css.
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [js.arc](https://developers.arcgis.com/javascript/latest/)
 * [JavaScript.arc]([http://url.link.goes.here](https://www.javascripttutorial.net/web-apis/javascript-arc/))
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
 * Add more filters 
 * Add more maps options 
 * Add more design options 
