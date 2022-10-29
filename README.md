@@ -13,7 +13,7 @@ This software was written so i could better understand how to use GIS Mapping.
 
 This software was devolpoed using vs code.
 
-This software was written in java script. 
+This software was written in java script, Html, and css.
 # Useful Websites
 
 {Make a list of websites that you found helpful in this project}
