@@ -17,7 +17,7 @@ This software was written in java script, Html, and css.
 # Useful Websites
 
 * [js.arc](https://developers.arcgis.com/javascript/latest/)
-* [JavaScript.arc]([http://url.link.goes.here](https://www.javascripttutorial.net/web-apis/javascript-arc/))
+* [JavaScript.arc](https://www.javascripttutorial.net/web-apis/javascript-arc/)
 
 # Future Work
 
