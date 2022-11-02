@@ -1,6 +1,4 @@
 
-
-
 require([
     "esri/config",
     "esri/Map",
